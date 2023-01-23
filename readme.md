@@ -1,5 +1,5 @@
 # Bigup Web: WordPress Plugin Bootstrap
----
+
 
 A bootstrap project for any WordPress plugin complete with:
 
@@ -11,7 +11,7 @@ A bootstrap project for any WordPress plugin complete with:
 
 
 ## Distribution
----
+
 
 This project is setup to make it easy to go from raw code to bundled, minified assets in a
 distributable zip.
@@ -24,7 +24,7 @@ distributable zip.
 
 
 ## Installing
----
+
 
 Once you have cloned the repository, cd to the root of the project and install the dependencies:
 
@@ -37,7 +37,7 @@ npm install
 
 
  ## License
- ---
+
 
 This project is licensed under the MIT License.
 
