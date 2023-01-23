@@ -1,6 +1,5 @@
 # Bigup Web: WordPress Plugin Bootstrap
 
-
 A bootstrap project for any WordPress plugin complete with:
 
  - Widget
@@ -10,21 +9,7 @@ A bootstrap project for any WordPress plugin complete with:
  - ES6 JS modules
 
 
-## Distribution
-
-
-This project is setup to make it easy to go from raw code to bundled, minified assets in a
-distributable zip.
-
- - Package managers ( composer and npm )
- - phpcs PHP lint/fix
- - eslint JS lint/fix
- - webpack CSS/SCSS/JS bundling
- - webpack zip installer packaging
-
-
-## Installing
-
+## Installation
 
 Once you have cloned the repository, cd to the root of the project and install the dependencies:
 
@@ -33,11 +18,76 @@ composer install
 npm install
 ```
 
-*Author to do - reference global phpcs and eslint install*
+I recommend installing phpcs and ESLint VS Code plugins. You can then set VS Code to format on save and highlight errors in realtime.
+
+
+### Composer Global VS Code Setup (optional)
+
+**Install phpcs system-wide**
+`composer global require squizlabs/php_codesniffer`
+
+**Install phpcs VS Code Plugin**
+1. Open Visual Studio Code.
+2. Press Ctrl+P on Windows or Cmd+P on Mac to open the Quick Open dialog.
+3. Type ext install phpcs to find the extension.
+4. Press Enter or click the cloud icon to install it.
+5. Restart Visual Studio Code when prompted.
+
+**note**: If you see an error with phpcs not being found, you may need to set the path for the phpcs executable manually in the plugin settings. You can either configure this to point to the absolute path of the global phpcs binary, or the relative path of the local phpcs binary in the project.
+
+See [here](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs) for more instructions.
+
+
+### ESLint Format on Save (optional)
+
+**Install ESLint VS Code Plugin**
+1. Open Visual Studio Code.
+2. Press Ctrl+P on Windows or Cmd+P on Mac to open the Quick Open dialog.
+3. Type ext install dbaeumer.vscode-eslint to find the extension.
+4. Press Enter or click the cloud icon to install it.
+5. Restart Visual Studio Code when prompted.
+
+Add this config to your `settings.json` to enable format on save:
+```
+"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+"editor.codeActionsOnSave": {
+	"source.fixAll.eslint": true
+},
+```
+
+See [here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for more instructions.
+
+
+## Linting
+
+Full linting for CSS/SASS, JS/TS, PHP, markdown and more.
+
+This project uses **npm** package [@wordpress/scripts](https://www.npmjs.com/package/@wordpress/scripts) to lint CSS, JS and markdown files, plus some other helpful tasks.
+
+To lint and fix PHP, phpcs is used along with **composer** package [wp-coding-standards/wpcs](https://packagist.org/packages/wp-coding-standards/wpcs) to enforce WordPress code style.
+
+See package.json and composer.json for npm and composer scripts respectiveley and/or see the package links above for further instructions.
+
+To run a script:
+
+`npm run [script name]`
+
+You can override the preconfigured script code styles with your own config by placing a config e.g. `eslintrc.json` in the root. Your config will be merged with the default settings.
+
+
+## Distribution
+
+**Note** This bundle setup is a work in progress!
+*To-do: create separate bundles for admin/front-end*
+
+This project is setup to make it easy to go from raw code to bundled, minified assets in a distributable zip. To achieve this Webpack is configured independantly of the WordPress scripts.
+
+`npm run build` Runs Webpack using the config in the root. It bundles and minifies JS and CSS from src and outputs bundle.js and bundle.css in `/public`. These bundles are then enqueued in the PHP Initialisation class.
+
+`npm run zip` uses [zip-webpack-plugin](https://www.npmjs.com/package/zip-webpack-plugin)
 
 
  ## License
-
 
 This project is licensed under the MIT License.
 
