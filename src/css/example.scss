@@ -1,0 +1,57 @@
+/**
+ * Bigup Plugin Bootstrap - Styles.
+ *
+ * @package bigup_plugin_bootstrap
+ * @author Jefferson Real <me@jeffersonreal.uk>
+ * @copyright Copyright (c) 2023, Jefferson Real
+ * @license GPL3+
+ * @link https://jeffersonreal.uk
+ */
+
+.bigup__example_template_part {
+	border: solid 1px #0005;
+	background: #f8f801;
+	padding: 2em;
+	width: fit-content;
+	color: #000;
+	font-family: helvetica, arial, sans-serif;
+	box-shadow: 10px 10px 20px -10px #000;
+	animation: moveyShadow 5s infinite linear;
+
+	h3 {
+		font-size: 3em;
+		font-weight: 600;
+	}
+
+	p {
+		font-weight: 600;
+	}
+
+	ul {
+		list-style: none;
+		width: max-content;
+
+		li {
+			margin-bottom: 6px;
+			display: flex;
+			justify-content: space-between;
+			gap: 0.5em;
+		}
+	}
+
+	[id~=cssTest]:after {
+		content: "✅";
+	}
+
+	[class~=jsLoaded]:after {
+		content: "✅";
+	}
+}
+
+@keyframes moveyShadow {
+	0%   { box-shadow:  10px  10px 20px -10px #000; }
+	25%  { box-shadow: -10px  10px 20px -10px #000; }
+	50%  { box-shadow: -10px -10px 20px -10px #000; }
+	75%  { box-shadow:  10px -10px 20px -10px #000; }
+	100% { box-shadow:  10px  10px 20px -10px #000; }
+}
