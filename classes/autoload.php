@@ -43,7 +43,7 @@ spl_autoload_register(
 		if ( file_exists( $class_filepath ) ) {
 			include_once $class_filepath;
 		} else {
-			echo '<script>console.log("ERROR: Bigup_WordPress_Plugin_Bootstrap php autoload | Class not found: ' . $classname . '");</script>';
+			echo '<script>console.log("ERROR: Bigup_Plugin_Bootstrap php autoload | Class not found: ' . $classname . '");</script>';
 		}
 	}
 );

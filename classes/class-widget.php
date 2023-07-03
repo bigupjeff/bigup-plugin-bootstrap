@@ -2,7 +2,7 @@
 namespace Bigup\Plugin_Bootstrap;
 
 /**
- * Bigup WordPress Plugin Bootstrap - Widget.
+ * Bigup Plugin Bootstrap - Widget.
  *
  * This template defines the widget including:
  *  - settings form

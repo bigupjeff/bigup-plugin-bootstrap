@@ -2,7 +2,7 @@
 namespace Bigup\Plugin_Bootstrap;
 
 /**
- * Bigup WordPress Plugin Bootstrap - Initialisation.
+ * Bigup Plugin Bootstrap - Initialisation.
  *
  * Setup styles and helper functions for this plugin.
  *
@@ -48,8 +48,8 @@ class Initialise {
 	 * These assets can be enqueued from anywhere.
 	 */
 	public function register_global_scripts_and_styles() {
-		wp_register_style( 'bigup_plugin_bootstrap_css', BIGUP_WORDPRES_PLUGIN_BOOTSTRAP_URL . 'public/bundle.css', array(), filemtime( BIGUP_WORDPRES_PLUGIN_BOOTSTRAP_PATH . 'public/bundle.css' ), 'all' );
-		wp_register_script( 'bigup_plugin_bootstrap_js', BIGUP_WORDPRES_PLUGIN_BOOTSTRAP_URL . 'public/bundle.js', array(), filemtime( BIGUP_WORDPRES_PLUGIN_BOOTSTRAP_PATH . 'public/bundle.js' ), 'true' );
+		wp_register_style( 'bigup_plugin_bootstrap_css', BIGUP_PLUGIN_BOOTSTRAP_URL . 'public/bundle.css', array(), filemtime( BIGUP_PLUGIN_BOOTSTRAP_PATH . 'public/bundle.css' ), 'all' );
+		wp_register_script( 'bigup_plugin_bootstrap_js', BIGUP_PLUGIN_BOOTSTRAP_URL . 'public/bundle.js', array(), filemtime( BIGUP_PLUGIN_BOOTSTRAP_PATH . 'public/bundle.js' ), 'true' );
 	}
 
 
@@ -70,7 +70,7 @@ class Initialise {
 	 */
 	public function enqueue_admin_scripts_and_styles() {
 		if ( ! wp_script_is( 'bigup_icons', 'registered' ) ) {
-			wp_register_style( 'bigup_icons', BIGUP_WORDPRES_PLUGIN_BOOTSTRAP_URL . 'dashicons/css/bigup-icons.css', array(), filemtime( BIGUP_WORDPRES_PLUGIN_BOOTSTRAP_PATH . 'dashicons/css/bigup-icons.css' ), 'all' );
+			wp_register_style( 'bigup_icons', BIGUP_PLUGIN_BOOTSTRAP_URL . 'dashicons/css/bigup-icons.css', array(), filemtime( BIGUP_PLUGIN_BOOTSTRAP_PATH . 'dashicons/css/bigup-icons.css' ), 'all' );
 		}
 		if ( ! wp_script_is( 'bigup_icons', 'enqueued' ) ) {
 			wp_enqueue_style( 'bigup_icons' );

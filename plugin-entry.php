@@ -25,9 +25,9 @@ namespace Bigup\Plugin_Bootstrap;
  * write relative file references, making code portable.
  */
 $plugin_url = plugin_dir_url( __FILE__ );
-define( 'BIGUP_WORDPRES_PLUGIN_BOOTSTRAP_URL', $plugin_url );
+define( 'BIGUP_PLUGIN_BOOTSTRAP_URL', $plugin_url );
 $plugin_path = plugin_dir_path( __FILE__ );
-define( 'BIGUP_WORDPRES_PLUGIN_BOOTSTRAP_PATH', $plugin_path );
+define( 'BIGUP_PLUGIN_BOOTSTRAP_PATH', $plugin_path );
 
 /**
  * Load PHP autoloader to ready the classes.

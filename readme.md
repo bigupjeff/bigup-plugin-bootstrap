@@ -1,4 +1,4 @@
-# Bigup Web: WordPress Plugin Bootstrap
+# Bigup Web: Plugin Bootstrap
 
 A bootstrap project for any WordPress plugin complete with:
 
@@ -9,7 +9,21 @@ A bootstrap project for any WordPress plugin complete with:
  - ES6 JS modules
 
 
-## Installation
+## Initialise
+
+Search/replace these strings in this order to rename the plugin:
+
+Bigup\Plugin_Bootstrap
+Bigup\\Plugin_Bootstrap\\
+bigup_plugin_bootstrap
+bigup-web-plugin-bootstrap
+Plugin Bootstrap
+A bootstrap project for any WordPress plugin
+BIGUP_PLUGIN_BOOTSTRAP_URL
+BIGUP_PLUGIN_BOOTSTRAP_PATH
+
+
+## Dependency Installation
 
 Once you have cloned the repository, cd to the root of the project and install the dependencies:
 
